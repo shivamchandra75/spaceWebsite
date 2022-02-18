@@ -1,0 +1,368 @@
+@import "abstracts/fonts";
+@import "abstracts/colors";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../Files/assets/home/background-home-mobile.jpg");
+  overflow-x: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+header {
+  padding: 1rem 1rem;
+  margin-bottom: 1.1rem;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+}
+
+#logo {
+  height: 40px;
+  width: 40px;
+}
+
+.nav-line {
+  display: none;
+  position: absolute;
+  width: 33%;
+  height: 0.5px;
+  background-color: rgba(208, 214, 249, 0.4);
+  left: 164px;
+  top: 88px;
+  z-index: 2;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  max-width: 70%;
+  height: 100vh;
+  z-index: -50;
+  visibility: hidden; // remember that transitions don't work with display property;
+  background: rgba(225, 225, 225, 0); //we can actually drop this.
+  backdrop-filter: blur(
+    35px
+  ); // this property set to blur blurs the background of the element.
+  transition: all 0.7s ease-in-out;
+
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 6rem 0rem 0rem 2rem;
+
+    .list-items {
+      list-style: none;
+      color: white;
+      padding: 1rem 2.5rem 1rem 0;
+      border-right: 2px solid transparent;
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-family: $nav-font;
+        font-size: 1rem;
+        letter-spacing: 4px;
+        cursor: pointer;
+
+        span {
+          font-weight: bold;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    .list-items.active {
+      border-right: 2px solid white;
+    }
+  }
+}
+
+.burger {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  right: 1rem;
+  top: 1.5rem;
+  padding: 12px 0;
+
+  .line {
+    background: $blue;
+    width: 1.8rem;
+    height: 3px;
+    position: relative;
+  }
+
+  .line::before,
+  .line::after {
+    content: "";
+    background: $blue;
+    width: 1.8rem;
+    height: 3px;
+    position: absolute;
+    transition: all 0.5s ease;
+  }
+  .line::before {
+    transform: translateY(-10px);
+  }
+  .line::after {
+    transform: translateY(10px);
+  }
+}
+
+.space-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 85%;
+  margin: 0 auto;
+  min-height: 75vh;
+  padding-top: 6em;
+  z-index: 1;
+  // min-height: 80vh;
+}
+
+.space-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  // border: 1px solid green;
+
+  .home-line {
+    font-family: $h5-font;
+    color: $blue;
+    font-size: 1.1rem;
+    word-spacing: 0.4rem;
+  }
+
+  .space-heading {
+    font-family: $h1-font;
+    color: $white;
+    font-size: 5.3rem;
+  }
+
+  .space-para {
+    font-family: $para-font;
+    color: $blue;
+    text-align: center;
+    font-size: 0.93rem;
+  }
+}
+
+.item {
+  margin: 0.8rem 0;
+}
+
+.explore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  color: $black;
+  background: white;
+  padding: 2em;
+  border-radius: 50%;
+  margin: 0 auto;
+  font-family: $sub-heading-font1;
+  font-size: 1.2rem;
+  text-decoration: none;
+  z-index: 1;
+  position: relative;
+}
+
+.explore::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(white, 0.25);
+  border-radius: 50%;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.5s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.explore:hover::after,
+.explore:focus::after {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+.nav-animation {
+  right: 0;
+  z-index: 1;
+  visibility: visible;
+}
+
+//we say that is there is an element with class line within an element an element with class open make it transparent and as soon as this class gets removed the above code gets applied where background is "$blue".
+.open .line {
+  background: transparent;
+}
+//we say that is there is an element with class line within an element an element with class open rotate it's before element and as soon as this class gets removed the above code gets applied where there is no rotatioin.
+.open .line::before {
+  transform: rotate(-45deg);
+}
+//we say that is there is an element with class line within an element an element with class open rotate it's after element and as soon as this class gets removed the above code gets applied where there is no rotatioin.
+.open .line::after {
+  transform: rotate(45deg);
+}
+
+@media screen and (min-width: 375px) {
+  .nav {
+    width: 65%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  img :not(#logo) {
+    width: 100%;
+    height: 100%;
+  }
+  body {
+    background-image: url("../Files/assets/home/background-home-tablet.jpg");
+  }
+
+  header {
+    padding: 1.5rem 2.5rem 1rem 2.5rem;
+    margin-bottom: 6rem;
+  }
+  #logo {
+    height: 48px;
+    width: 48px;
+  }
+  .nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    height: auto;
+    visibility: visible;
+    // padding: 2em 0;
+    width: 60%;
+    background: rgba(225, 225, 225, 0.1);
+    .nav-list {
+      flex-direction: row;
+      margin: 0;
+      .list-items {
+        padding: 2rem 0rem;
+        border-bottom: 4px solid transparent;
+        transition: all 1s ease;
+
+        a {
+          font-size: 1.1rem;
+          span {
+            display: none;
+          }
+        }
+      }
+      .list-items:focus {
+        border-bottom-color: rgba(225, 225, 225, 0.6);
+      }
+
+      .list-items.active {
+        border-bottom-color: white;
+        border-right: 2px solid transparent;
+      }
+    }
+  }
+  .burger {
+    display: none;
+  }
+
+  .space-text-container {
+    .home-line {
+      font-size: 1.5rem;
+    }
+    .space-heading {
+      font-size: 9.5rem;
+    }
+
+    .space-para {
+      font-size: 1.3rem;
+      max-width: 65%;
+    }
+  }
+
+  .explore {
+    width: 15.125rem;
+    height: 15.125rem;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    background-image: url("../Files/assets/home/background-home-desktop.jpg");
+  }
+
+  header {
+    padding: 4rem 3rem;
+  }
+  .nav-line {
+    // visibility: visible;
+    display: block;
+  }
+
+  .nav {
+    top: 2.25rem;
+    width: 58%;
+    .nav-list {
+      .list-items {
+        padding: 2.5rem 0;
+        a {
+          span {
+            display: inline;
+          }
+        }
+      }
+      .list-items:hover {
+        border-bottom-color: rgba(225, 225, 225, 0.6);
+      }
+
+      .list-items.active {
+        border-bottom-color: white;
+        border-right: 2px solid transparent;
+      }
+    }
+  }
+  .space-container {
+    flex-direction: row;
+    min-height: 60vh;
+    max-width: 75%;
+
+    .space-text-container {
+      max-width: 38%;
+      margin: 0;
+      .home-line {
+        font-size: 2rem;
+        text-align: left;
+        align-self: flex-start;
+      }
+      .space-para {
+        max-width: 100%;
+        text-align: left;
+      }
+    }
+  }
+  .explore {
+    margin: 11rem 0 0 0;
+    width: 17.125rem;
+    height: 17.125rem;
+    font-size: 2.5rem;
+  }
+}

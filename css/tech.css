@@ -1,0 +1,495 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.rocket-d-img,
+.spaceport-d-img,
+.capsule-d-img {
+  display: none;
+}
+
+body {
+  height: 100vh;
+  overflow-x: hidden;
+  color: white;
+}
+
+header {
+  padding: 1rem 1rem;
+  margin-bottom: 1.1rem;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+#logo {
+  height: 40px;
+  width: 40px;
+}
+
+.nav-line {
+  display: none;
+  position: absolute;
+  width: 33%;
+  height: 0.5px;
+  background-color: rgba(208, 214, 249, 0.4);
+  left: 164px;
+  top: 88px;
+  z-index: 2;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  max-width: 70%;
+  height: 100vh;
+  z-index: -50;
+  visibility: hidden;
+  background: rgba(225, 225, 225, 0);
+  -webkit-backdrop-filter: blur(35px);
+          backdrop-filter: blur(35px);
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.nav .nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 6rem 0rem 0rem 2rem;
+}
+
+.nav .nav-list .list-items {
+  list-style: none;
+  color: white;
+  padding: 1rem 2.5rem 1rem 0;
+  border-right: 2px solid transparent;
+}
+
+.nav .nav-list .list-items a {
+  text-decoration: none;
+  color: white;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+
+.nav .nav-list .list-items a span {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.nav .nav-list .list-items.active {
+  border-right: 2px solid white;
+}
+
+.burger {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  right: 1rem;
+  top: 1.5rem;
+  padding: 12px 0;
+}
+
+.burger .line {
+  background: #d0d6f9;
+  width: 1.8rem;
+  height: 3px;
+  position: relative;
+}
+
+.burger .line::before,
+.burger .line::after {
+  content: "";
+  background: #d0d6f9;
+  width: 1.8rem;
+  height: 3px;
+  position: absolute;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.burger .line::before {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.burger .line::after {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+section {
+  background-image: url("../Files/assets/technology/background-technology-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  scroll-snap-align: start;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  padding-top: 6em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+
+.container .first-line {
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 2.7px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.container .first-line span {
+  color: rgba(225, 225, 225, 0.5);
+  font-weight: bold;
+  margin-right: 0.8rem;
+}
+
+.img-container img {
+  width: 100%;
+}
+
+.numbering {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2rem 0;
+}
+
+.numbering .num {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-family: "Bellefair", serif;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.numbering .num:hover {
+  border: 1px solid white;
+}
+
+.numbering .num.active {
+  background: white;
+  color: black;
+}
+
+.text-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.text-container .terminology {
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  color: #d0d6f9;
+  font-family: "Bellefair", serif;
+}
+
+.text-container .name {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  color: white;
+  font-family: "Bellefair", serif;
+  margin: 0.8rem 0;
+}
+
+.text-container .para {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  font-family: "Barlow", sans-serif;
+  color: #d0d6f9;
+  margin-bottom: 0.8rem;
+  max-width: 90%;
+}
+
+.nav-animation {
+  right: 0;
+  z-index: 1;
+  visibility: visible;
+}
+
+.open .line {
+  background: transparent;
+}
+
+.open .line::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.open .line::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+@media screen and (min-width: 375px) {
+  .nav {
+    width: 65%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    background-image: url("../Files/assets/technology/background-technology-tablet.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  img :not(#logo) {
+    width: 100%;
+    height: 100%;
+  }
+  #logo {
+    height: 48px;
+    width: 48px;
+  }
+  header {
+    padding: 1.5rem 2.5rem 1rem 2.5rem;
+    margin-bottom: 6rem;
+  }
+  .nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    height: auto;
+    visibility: visible;
+    width: 60%;
+    background: rgba(225, 225, 225, 0.1);
+  }
+  .nav .nav-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0;
+  }
+  .nav .nav-list .list-items {
+    padding: 2rem 0rem;
+    border-bottom: 4px solid transparent;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  .nav .nav-list .list-items a {
+    font-size: 1.1rem;
+  }
+  .nav .nav-list .list-items a span {
+    display: none;
+  }
+  .nav .nav-list .list-items:focus {
+    border-bottom-color: rgba(225, 225, 225, 0.6);
+  }
+  .nav .nav-list .list-items.active {
+    border-bottom-color: white;
+    border-right: 2px solid transparent;
+  }
+  .burger {
+    display: none;
+  }
+  .container {
+    padding-top: 8em;
+  }
+  .container .first-line {
+    font-size: 1.25rem;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-bottom: 4rem;
+    margin-left: 3rem;
+  }
+  .numbering {
+    margin: 3rem 0;
+  }
+  .numbering .num {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+  .text-container .name {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+  }
+  .text-container .para {
+    max-width: 60%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .rocket-d-img,
+  .spaceport-d-img,
+  .capsule-d-img {
+    display: block;
+  }
+  .rocket-img,
+  .spaceport-img,
+  .capsule-img {
+    display: none;
+  }
+  #logo {
+    height: 48px;
+    width: 48px;
+  }
+  section {
+    background-image: url("../Files/assets/technology/background-technology-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+  }
+  header {
+    padding: 4rem 3rem;
+    z-index: 1;
+  }
+  .nav-line {
+    display: block;
+  }
+  .nav {
+    top: 2.25rem;
+    width: 58%;
+  }
+  .nav .nav-list .list-items {
+    padding: 2.5rem 0;
+  }
+  .nav .nav-list .list-items a span {
+    display: inline;
+  }
+  .nav .nav-list .list-items:hover {
+    border-bottom-color: rgba(225, 225, 225, 0.6);
+  }
+  .nav .nav-list .list-items.active {
+    border-bottom-color: white;
+    border-right: 2px solid transparent;
+  }
+  .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-height: 98vh;
+    padding-top: 18em;
+    padding-left: 10em;
+  }
+  .container .first-line {
+    position: absolute;
+    font-size: 1.8rem;
+    letter-spacing: 4.725px;
+    line-height: 2rem;
+    top: 193px;
+    left: 164px;
+    margin-left: 0;
+  }
+  .numbering {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-right: 5rem;
+  }
+  .numbering .num {
+    margin: 0.8rem 0;
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+  }
+  .img-container {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .text-container {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-right: 9rem;
+    max-width: 42%;
+  }
+  .text-container .terminology {
+    text-align: left;
+  }
+  .text-container .name {
+    font-size: 4rem;
+    line-height: 4rem;
+    text-align: left;
+  }
+  .text-container .para {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    text-align: left;
+    max-width: 90%;
+  }
+}
+/*# sourceMappingURL=tech.css.map */

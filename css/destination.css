@@ -1,0 +1,502 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 1rem 1rem;
+  margin-bottom: 1.1rem;
+  width: 100%;
+  position: fixed;
+}
+
+#logo {
+  height: 40px;
+  width: 40px;
+}
+
+.nav-line {
+  display: none;
+  position: absolute;
+  width: 33%;
+  height: 0.5px;
+  background-color: rgba(208, 214, 249, 0.4);
+  left: 164px;
+  top: 88px;
+  z-index: 2;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  max-width: 70%;
+  height: 100vh;
+  z-index: -50;
+  visibility: hidden;
+  background: rgba(225, 225, 225, 0);
+  -webkit-backdrop-filter: blur(35px);
+          backdrop-filter: blur(35px);
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.nav .nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 6rem 0rem 0rem 2rem;
+}
+
+.nav .nav-list .list-items {
+  list-style: none;
+  color: white;
+  padding: 1rem 2.5rem 1rem 0;
+  border-right: 2px solid transparent;
+}
+
+.nav .nav-list .list-items a {
+  text-decoration: none;
+  color: white;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+
+.nav .nav-list .list-items a span {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.nav .nav-list .list-items:active {
+  border-right: 2px solid white;
+}
+
+.burger {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  right: 1rem;
+  top: 1.5rem;
+  padding: 12px 0;
+}
+
+.burger .line {
+  background: #d0d6f9;
+  width: 1.8rem;
+  height: 3px;
+  position: relative;
+}
+
+.burger .line::before,
+.burger .line::after {
+  content: "";
+  background: #d0d6f9;
+  width: 1.8rem;
+  height: 3px;
+  position: absolute;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.burger .line::before {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.burger .line::after {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+section {
+  background-image: url("../Files/assets/destination/background-destination-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  scroll-snap-align: start;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 85%;
+  margin: 0 auto;
+  padding-top: 6em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+
+.container .first-line {
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 2.7px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.container .first-line span {
+  color: rgba(225, 225, 225, 0.5);
+  font-weight: bold;
+  margin-right: 0.8rem;
+}
+
+.left-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.left-container .moon-img,
+.left-container .mars-img,
+.left-container .europa-img,
+.left-container .titan-img {
+  height: 50%;
+  width: 50%;
+}
+
+.right-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.right-container .planet-tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.right-container .planet-tab .tab {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 2.37px;
+  margin: 0 0.8rem;
+  padding-bottom: 0.5em;
+  color: #d0d6f9;
+  border-bottom: 2.5px solid transparent;
+}
+
+.right-container .planet-tab .tab:hover {
+  border-bottom: 2.5px solid #cecece;
+}
+
+.right-container .planet-tab .tab.active {
+  border-bottom-color: white;
+}
+
+.right-container .planet-div {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(208, 214, 249, 0.4);
+}
+
+.right-container .planet-div .planet-name {
+  text-align: center;
+  font-size: 3.5rem;
+  font-family: "Bellefair", serif;
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+}
+
+.right-container .planet-div .planet-para {
+  text-align: center;
+  color: #d0d6f9;
+  font-size: 0.9rem;
+  font-family: "Barlow", sans-serif;
+  line-height: 25px;
+}
+
+.right-container .dist-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.right-container .dist-div .one {
+  font-size: 0.8rem;
+  color: #d0d6f9;
+  font-family: "Barlow Condensed", sans-serif;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2.37px;
+}
+
+.right-container .dist-div .two {
+  font-size: 1.8rem;
+  color: white;
+  font-family: "Bellefair", serif;
+  margin-bottom: 1.3rem;
+}
+
+.right-container .dist-div .dist-left,
+.right-container .dist-div .dist-right {
+  text-align: center;
+}
+
+.nav-animation {
+  right: 0;
+  z-index: 1;
+  visibility: visible;
+}
+
+.open .line {
+  background: transparent;
+}
+
+.open .line::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.open .line::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+@media screen and (min-width: 375px) {
+  .nav {
+    width: 65%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    background-image: url("../files/assets/destination/background-destination-tablet.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  img :not(#logo) {
+    width: 100%;
+    height: 100%;
+  }
+  #logo {
+    height: 48px;
+    width: 48px;
+  }
+  header {
+    padding: 1.5rem 2.5rem 1rem 2.5rem;
+    margin-bottom: 6rem;
+  }
+  .nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    height: auto;
+    visibility: visible;
+    width: 60%;
+    background: rgba(225, 225, 225, 0.1);
+  }
+  .nav .nav-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0;
+  }
+  .nav .nav-list .list-items {
+    padding: 2rem 0rem;
+    border-bottom: 4px solid transparent;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  .nav .nav-list .list-items a {
+    font-size: 1.1rem;
+  }
+  .nav .nav-list .list-items a span {
+    display: none;
+  }
+  .nav .nav-list .list-items:focus {
+    border-bottom-color: rgba(225, 225, 225, 0.6);
+  }
+  .nav .nav-list .list-items.active {
+    border-bottom-color: #e1e1e1;
+    border-right: 2px solid transparent;
+  }
+  .burger {
+    display: none;
+  }
+  .container {
+    padding-top: 8em;
+  }
+  .container .first-line {
+    font-size: 1.25rem;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .left-container {
+    margin: 2.5rem 0;
+  }
+  .left-container .moon-img,
+  .left-container .mars-img,
+  .left-container .europa-img,
+  .left-container .titan-img {
+    height: 65%;
+    width: 65%;
+  }
+  .right-container .planet-div {
+    max-width: 85%;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+  }
+  .right-container .planet-div .planet-name {
+    font-size: 5rem;
+  }
+  .right-container .planet-div .planet-para {
+    font-size: 1rem;
+  }
+  .right-container .dist-div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    min-width: 55%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #logo {
+    height: 48px;
+    width: 48px;
+  }
+  section {
+    background-image: url("../files/assets/destination/background-destination-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+  }
+  header {
+    padding: 4rem 3rem;
+    z-index: 1;
+  }
+  .nav-line {
+    display: block;
+  }
+  .nav {
+    top: 2.25rem;
+    width: 58%;
+  }
+  .nav .nav-list .list-items {
+    padding: 2.5rem 0;
+    cursor: pointer;
+  }
+  .nav .nav-list .list-items a span {
+    display: inline;
+  }
+  .nav .nav-list .list-items:hover {
+    border-bottom-color: rgba(225, 225, 225, 0.6);
+  }
+  .nav .nav-list .list-items.active {
+    border-bottom-color: white;
+    border-right: 2px solid transparent;
+  }
+  .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-height: 98vh;
+    padding-top: 18em;
+  }
+  .container .first-line {
+    position: absolute;
+    font-size: 1.8rem;
+    letter-spacing: 4.725px;
+    line-height: 2rem;
+    top: 193px;
+    left: 164px;
+  }
+  .left-container {
+    min-width: 57%;
+    margin: 0;
+  }
+  .right-container {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .right-container .planet-tab .tab {
+    cursor: pointer;
+  }
+  .right-container .planet-div .planet-name {
+    text-align: left;
+  }
+  .right-container .planet-div .planet-para {
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+  .right-container .dist-div .dist-left,
+  .right-container .dist-div .dist-right {
+    text-align: left;
+  }
+}
+/*# sourceMappingURL=destination.css.map */
