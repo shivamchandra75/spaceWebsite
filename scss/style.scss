@@ -21,6 +21,7 @@ header {
   margin-bottom: 1.1rem;
   width: 100%;
   position: fixed;
+  // position: relative;
   z-index: 2;
 }
 
@@ -128,7 +129,7 @@ header {
   justify-content: space-between;
   max-width: 85%;
   margin: 0 auto;
-  min-height: 75vh;
+  min-height: 93vh;
   padding-top: 6em;
   z-index: 1;
   // min-height: 80vh;
@@ -283,6 +284,10 @@ header {
   .burger {
     display: none;
   }
+  .space-container {
+    padding-top: 12em;
+    min-height: 90vh;
+  }
 
   .space-text-container {
     .home-line {
@@ -344,10 +349,12 @@ header {
     flex-direction: row;
     min-height: 60vh;
     max-width: 75%;
+    padding-top: 31em;
 
     .space-text-container {
       max-width: 38%;
       margin: 0;
+      align-items: flex-start;
       .home-line {
         font-size: 2rem;
         text-align: left;

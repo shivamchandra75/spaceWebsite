@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../css/destination.css" />
     <title>Frontend Mentor | Space tourism website</title>
   </head>
-  <body>
+  <body data-barba="wrapper">
     <header>
       <img src="./assets/shared/logo.svg" alt="Star Logo" id="logo" />
       <div class="nav-line"></div>
@@ -46,7 +46,7 @@
       </div>
     </header>
 
-    <main>
+    <main data-barba="container" data-barba-namespace="destination">
       <section class="moon">
         <div class="container">
           <p class="first-line"><span>01</span>PICK YOUR DESTINATION</p>
@@ -205,5 +205,12 @@
       </section>
     </main>
     <script src="../app.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/0.0.2/barba.min.js"
+      integrity="sha512-j0ThLeHF8KI1DZjV/vAJ0CKkDAMAsZbFA1KarA2jIfzAmXn3di3krSq9LJrv/gBVsUnouKqS/agIoQpxj/3Hkg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
   </body>
 </html>

@@ -22,7 +22,7 @@
 
     <title>Space Tourism Website</title>
   </head>
-  <body>
+  <body data-barba="wrapper">
     <header>
       <img src="./Files/assets/shared/logo.svg" alt="Star Logo" id="logo" />
       <div class="nav-line"></div>
@@ -50,7 +50,11 @@
         <div class="line"></div>
       </div>
     </header>
-    <div class="space-container">
+    <div
+      data-barba="container"
+      data-barba-namespace="home"
+      class="space-container"
+    >
       <div class="space-text-container">
         <p class="home-line item">SO, YOU WANT TO TRAVEL TO</p>
         <p class="space-heading item">SPACE</p>
@@ -65,8 +69,19 @@
       <a href="./Files/destination-moon.html" class="explore">EXPLORE</a>
     </div>
 
-    <!--  01 Destination 02 Crew 03 Technology   Explore -->
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+      integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="./app.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"
+      integrity="sha512-7b1FfB2MGnB65aK6jrbS8k3REB+8bEE8UfP/TEwacejD0g02nLLI1VL4IPcKyiLk2lf7HJWaUYEUWc65aqaXQg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </body>
 </html>

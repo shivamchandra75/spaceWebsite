@@ -85,7 +85,7 @@ header {
   margin-right: 0.5rem;
 }
 
-.nav .nav-list .list-items:active {
+.nav .nav-list .list-items.active {
   border-right: 2px solid white;
 }
 
